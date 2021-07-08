@@ -45,6 +45,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3.4.0
         with:
+          flavor: true
           images: ghcr.io/tabakerov/mysampleapp
           tags: type=sha
         
