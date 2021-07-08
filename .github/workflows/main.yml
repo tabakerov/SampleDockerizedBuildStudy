@@ -41,12 +41,18 @@ jobs:
       # Runs a set of commands using the runners shell
       # - name: Build the docker thing
       #   run: docker build .
+      - name: Add meta
+        id: meta
+        uses: docker/metadata-action@v3.4.0
+        with:
+          images: ghcr.io/tabakerov/mysampleapp
+          tags: type=sha
         
       - name: Build and push Docker image
         uses: docker/build-push-action@v2.6.1
         with:
           context: .
           push: true
-          tags: ghcr.io/tabakerov/mysampleapp:latest
+          tags: ${{ steps.meta.outputs.tags }}
           # labels: 111
 
