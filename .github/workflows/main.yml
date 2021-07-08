@@ -39,14 +39,14 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Runs a set of commands using the runners shell
-      - name: Build the docker thing
-        run: docker build .
+      # - name: Build the docker thing
+      #   run: docker build .
         
       - name: Build and push Docker image
         uses: docker/build-push-action@v2.6.1
         with:
           context: .
           push: true
-          tags: github-action
-          labels: 111
+          # tags: github-action
+          # labels: 111
 
