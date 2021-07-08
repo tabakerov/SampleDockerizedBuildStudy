@@ -47,6 +47,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: mysampleapp
+          tags: ghcr.io/tabakerov/mysampleapp:latest
           # labels: 111
 
